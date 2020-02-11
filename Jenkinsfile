@@ -9,9 +9,9 @@ pipeline {
         }
         stage('init-env') {
             steps {
+                echo "(before init) SLEEP_FOR: $SLEEP_FOR"
                 sh "source .env"
-                // load ".env"
-                echo "SLEEP_FOR: $SLEEP_FOR"
+                echo "(after init) SLEEP_FOR: $SLEEP_FOR"
             }
         }
         stage('design') {
