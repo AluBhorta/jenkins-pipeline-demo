@@ -15,22 +15,22 @@ pipeline {
         }
         stage('design') {
             steps {
-                sh "design.sh"
+                sh design.sh
             }
         }
         stage('build') {
             steps {
-                sh "build.sh"
+                sh build.sh
             }
         }
         stage('test') {
             steps {
-                sh "test.sh"
+                sh test.sh
             }
         }
         stage('deploy') {
             steps {
-                sh "deploy.sh"
+                sh deploy.sh
             }
         }
     }
