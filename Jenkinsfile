@@ -9,13 +9,15 @@ pipeline {
         }
         stage('init-env') {
             steps {
-                // sh "source .env"
-                load ".env"
+                sh "source .env"
+                // load ".env"
                 echo "SLEEP_FOR: $SLEEP_FOR"
             }
         }
         stage('design') {
             steps {
+                echo "SLEEP_FOR: $SLEEP_FOR"
+                sh 'echo "SLEEP_FOR (in sh): $SLEEP_FOR"'
                 sh "sh ./design.sh"
             }
         }
