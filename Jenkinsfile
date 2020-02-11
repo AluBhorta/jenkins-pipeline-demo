@@ -9,7 +9,7 @@ pipeline {
         }
         stage('init-env') {
             steps {
-                sh "env.sh"
+                sh "source .env"
             }
         }
         stage('design') {
